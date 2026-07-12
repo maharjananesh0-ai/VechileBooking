@@ -1,0 +1,6 @@
+{
+  "name": "King Long 14-Seater Booking",
+  "description": "Premium QR-code booking page for a personal King Long 14-seater microbus. Fast, responsive, and mobile-first with direct WhatsApp integration, perfect for Kathmandu Valley, Manakamana, and custom group travels.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
