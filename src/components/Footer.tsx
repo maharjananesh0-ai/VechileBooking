@@ -1,18 +1,22 @@
 import { useState, useEffect } from 'react';
 import { Phone, MessageSquare, MapPin, ExternalLink, Calendar, Copy, Check } from 'lucide-react';
+import { getBaseUrl } from '../utils/url';
 
 interface FooterProps {
   darkMode: boolean;
 }
 
 export default function Footer({ darkMode }: FooterProps) {
-  const [currentUrl, setCurrentUrl] = useState('https://ais-pre-ryyaemzjzmik2jlljjnpkf-876372113552.asia-east1.run.app');
+  const [currentUrl, setCurrentUrl] = useState(() => getBaseUrl());
   const [copied, setCopied] = useState(false);
 
   // Safely extract window.location on browser mount
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      setCurrentUrl(window.location.href);
+      const baseUrl = getBaseUrl();
+      const bookingPath = window.location.pathname;
+      const query = window.location.search;
+      setCurrentUrl(`${baseUrl}${bookingPath}${query}`);
     }
   }, []);
 
