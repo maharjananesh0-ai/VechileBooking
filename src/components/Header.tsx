@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Phone, MessageSquare, Moon, Sun, Shield } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 interface HeaderProps {
   darkMode: boolean;
@@ -29,20 +30,12 @@ export default function Header({ darkMode, setDarkMode }: HeaderProps) {
         <div className="flex items-center justify-between">
           {/* Logo & Title */}
           <div className="flex items-center space-x-3">
-            <div className={`p-2 rounded-xl flex items-center justify-center ${darkMode ? 'bg-rhodo-600/20 border border-rhodo-500/30' : 'bg-rhodo-50 border border-rhodo-100'}`}>
-              <svg
-                className="w-6 h-6 text-rhodo-500 animate-pulse"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
-                />
-              </svg>
+            <div className={`p-1.5 rounded-xl flex items-center justify-center ${darkMode ? 'bg-rhodo-600/20 border border-rhodo-500/30' : 'bg-rhodo-50 border border-rhodo-100'}`}>
+              <img
+                src={logo}
+                alt="Vehicle Booking Logo"
+                className="w-7 h-7 object-contain rounded-lg"
+              />
             </div>
             <div>
               <h1 className={`text-lg sm:text-xl font-display font-bold tracking-tight ${darkMode ? 'text-white' : 'text-zinc-950'}`}>
